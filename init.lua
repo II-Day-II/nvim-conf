@@ -1,0 +1,7 @@
+require('keybindings')
+require('packages')
+require('config')
+require('treesitter')
+require('tree')
+require('lsp')
+require('bufferline')
