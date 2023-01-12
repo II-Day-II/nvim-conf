@@ -19,10 +19,22 @@ lsp.configure('sumneko_lua', {
     }
 })
 
+
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<Tab>'] = cmp.mapping.complete(),
+    ['<Tab>'] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+            local entry = cmp.get_selected_entry()
+            if not entry then
+                cmp.select_next_item(cmp_select)
+            else
+                cmp.confirm()
+            end
+        else
+            fallback()
+        end
+    end),
     ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
     ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
 })
