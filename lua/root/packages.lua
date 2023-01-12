@@ -35,6 +35,9 @@ require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', }
     }
+    -- buffer tabs 
+    use {'romgrk/barbar.nvim', wants='nvim-web-devicons'}
+    -- indentation hints
     use "lukas-reineke/indent-blankline.nvim"
     -- file explorer
     use 'nvim-tree/nvim-web-devicons'
