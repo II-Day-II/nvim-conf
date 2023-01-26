@@ -30,7 +30,7 @@ local function determine_shell()
     if os == "Windows_NT" then
         shell = "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"
         vim.opt.shellxquote = nil
-        -- vim.opt.shellcmdflag = '-NoLogo -ExecutionPolicy RemoteSigned -Command '
+        vim.opt.shellcmdflag = '-NoLogo -ExecutionPolicy RemoteSigned -Command '
 
     elseif os == "Linux" then
         shell = "/usr/bin/bash"
