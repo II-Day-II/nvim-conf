@@ -1,10 +1,10 @@
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {
         --"lua",
-        "rust",
-        "python",
-        "toml",
-        "help",
+        --"rust",
+        --"python",
+        --"toml",
+        --"help",
     },
 
     -- Install parsers synchronously (only applied to `ensure installed`)
